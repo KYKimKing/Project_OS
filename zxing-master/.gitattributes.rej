@@ -1,0 +1,9 @@
+diff a/zxing-master/.gitattributes b/zxing-master/.gitattributes	(rejected hunks)
+@@ -0,6 +0,7 @@
+ *.java text
+ 
+ # Declare files that will always have LF line endings on checkout.
++*.txt text eol=lf
+ 
+ # Denote all files that are truly binary and should not be modified.
+ *.png binary

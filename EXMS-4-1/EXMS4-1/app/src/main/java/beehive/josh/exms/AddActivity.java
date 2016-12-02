@@ -2,15 +2,14 @@ package beehive.josh.exms;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -50,9 +49,9 @@ public class AddActivity extends AppCompatActivity {
                     Data data = new Data(code, name, exp);
 
                     Gson gson = new Gson();
-                    String msg =  gson.toJosn(data);
+                    String msg =  gson.toJson(data);
 
-                    DbOpenHelper.getInstance().getSocket.emit("InsertData",msg)
+                    DbOpenHelper.getInstance().getSocket().emit("InsertData",msg);
                     DbOpenHelper.getInstance().dataArrayList.add(data);
                     //instance.insertData(data);
                     finish();

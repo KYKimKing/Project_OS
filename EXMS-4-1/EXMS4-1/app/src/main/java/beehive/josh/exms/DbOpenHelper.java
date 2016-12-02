@@ -4,16 +4,8 @@ package beehive.josh.exms;
  * Created by Josh on 2016-11-28.
  */
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -24,6 +16,8 @@ import java.util.ArrayList;
 import io.socket.client.IO;
 import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
+
+import static android.R.attr.data;
 
 
 /**
@@ -50,7 +44,7 @@ public class DbOpenHelper {
     public DbOpenHelper() {
         this.context = MyApplication.getContext();
         try {
-            socket = IO.socket("http://192.168.0.2:3000");
+            socket = IO.socket("http://116.33.64.93:3000");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -63,13 +57,11 @@ public class DbOpenHelper {
                 Gson gson = new Gson();
                 Type type = new TypeToken<ArrayList<Data>>(){}.getType();
                 instance.dataArrayList = gson.fromJson(resMsg,type);
-
-              
             }
         });
 
         socket.emit("GetDataList");
-        socket.emit("InsertData",msg);
+        socket.emit("InsertData",data);
     }
 
     public Socket getSocket(){

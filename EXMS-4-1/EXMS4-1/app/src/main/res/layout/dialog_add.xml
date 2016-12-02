@@ -59,7 +59,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.8"
-            android:hint="2016-11-11"
+            android:hint="2016-12-06"
             android:singleLine="true" />
     </LinearLayout>
 

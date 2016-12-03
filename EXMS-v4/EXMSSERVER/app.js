@@ -10,7 +10,7 @@ var io = require('socket.io').listen(httpServer);
 
 var mysql = require("mysql");
 var connection = mysql.createConnection({
-    host: "116.32.62.3",
+    host: "localhost",
     port: 3306,
     user: "root",
     password: "chlqudwns3073!",
@@ -22,7 +22,7 @@ connection.connect();
 io.on('connection', function (socket) {
 
     socket.on('GetDataList', function (data) {
-        var sqlQuery = "SELECT * FROM data;";
+        var sqlQuery = "SELECT * FROM barcode;";
         connection.query(sqlQuery, function (err, result) {
             if (err == null) {
                 console.log(result);
@@ -33,10 +33,25 @@ io.on('connection', function (socket) {
         });
     });
 
-    socket.on('InsertData', function (data){
-    		 var json = data.JSON.parse(data);
-    		 var sqlQuery = "Insert * FROM data (json.code,json.name,json.exp);";
-    		 connection.query(sqlQuery, function(err,result){
-    		 });
+    socket.on('InsertData', function (data) {
+        console.log(data);
+        var json = JSON.parse(data);
+        console.log(json);
+
+        var sqlQuery = "INSERT INTO barcode SET ?";
+        var post = {
+            code: json.code,
+            name: json.name,
+            exp: json.exp
+        };
+
+        connection.query(sqlQuery, post, function (err, result) {
+            if (err == null) {
+                console.log(err);
+            } else {
+                console.log(result);
+            }
+
+        });
     });
 });

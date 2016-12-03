@@ -51,6 +51,16 @@ public class ListDataAdapter extends BaseAdapter {
         TextView txtExp = (TextView) convertView.findViewById(R.id.txt_exp);
         txtExp.setText(data.getExp());
 
+        long nowTime = System.currentTimeMillis();
+
+        /*boolean expCheck = false;  // 이부분 유통기한 비교값!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        if(expCheck){
+            txtExp.setTextColor(Color.RED);
+        }
+        else {
+            txtExp.setTextColor(Color.GREEN);
+        }*/
+
         return convertView;
     }
 }

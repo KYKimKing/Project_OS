@@ -1,6 +1,7 @@
 package beehive.josh.exms;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class ListDataAdapter extends BaseAdapter {
     ArrayList<Data> dataArrayList;
@@ -53,13 +55,37 @@ public class ListDataAdapter extends BaseAdapter {
 
         long nowTime = System.currentTimeMillis();
 
-        /*boolean expCheck = false;  // 이부분 유통기한 비교값!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        boolean expCheck = false;  // 이부분 유통기한 비교값!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        String[] str_date = data.exp.split("-");
+        int exp_year = Integer.parseInt(str_date[0]);
+        int exp_month = Integer.parseInt(str_date[1]);
+        int exp_dayOfMonth = Integer.parseInt(str_date[2]);
+
+        Calendar calendar = Calendar.getInstance();
+        int today_year = calendar.get(Calendar.YEAR);
+        int today_month = calendar.get(Calendar.MONTH) + 1;
+        int today_day = calendar.get(Calendar.DAY_OF_MONTH);
+        // 2016.12.05 ....... 2016.12.06
+        if(today_year >= exp_year){
+            if(today_month >= exp_month){
+                if(today_day > exp_dayOfMonth){
+                    expCheck = true;
+                } else{
+                    expCheck = false;
+                }
+            } else{
+                expCheck = false;
+            }
+        } else{
+            expCheck = false;
+        }
+
         if(expCheck){
             txtExp.setTextColor(Color.RED);
         }
         else {
             txtExp.setTextColor(Color.GREEN);
-        }*/
+        }
 
         return convertView;
     }

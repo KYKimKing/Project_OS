@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -30,6 +32,7 @@ public class AddActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == IntentIntegrator.REQUEST_CODE) {
 
+
             IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
 
             final LinearLayout layout = (LinearLayout) View.inflate(AddActivity.this, R.layout.dialog_add, null);
@@ -43,12 +46,13 @@ public class AddActivity extends AppCompatActivity {
                 public void onClick(DialogInterface dialogInterface, int i) {
                     EditText etCode = (EditText) layout.findViewById(R.id.et_code);
                     EditText etName = (EditText) layout.findViewById(R.id.et_name);
-                    EditText etExp = (EditText) layout.findViewById(R.id.et_exp);
+                    //EditText etExp = (EditText) layout.findViewById(R.id.et_exp);
+                    DatePicker datePicker = (DatePicker)layout.findViewById(R.id.dp_exp);
                     String code = etCode.getText().toString();
                     String name = etName.getText().toString();
-                    String exp = etExp.getText().toString();
+                    String exp = datePicker.getYear() + "-" + (datePicker.getMonth() + 1) + "-" + datePicker.getDayOfMonth();
                     Data data = new Data(code, name, exp);
-
+                    Toast.makeText(MyApplication.getContext(), exp, Toast.LENGTH_LONG).show();
                     Gson gson = new Gson();
                     String msg = gson.toJson(data);
 

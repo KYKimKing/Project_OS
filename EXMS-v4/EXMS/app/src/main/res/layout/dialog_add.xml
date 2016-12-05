@@ -54,13 +54,22 @@
             android:text="유통기한"
             android:textSize="12sp"
             android:gravity="left"/>
-        <EditText
+        <!--<EditText
             android:id="@+id/et_exp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.8"
             android:hint="2016-11-11"
-            android:singleLine="true" />
+            android:singleLine="true" />-->
+
     </LinearLayout>
+
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dp_exp"
+        android:layout_gravity="center_horizontal"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"/>
 
 </LinearLayout>

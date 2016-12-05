@@ -10,10 +10,10 @@ var io = require('socket.io').listen(httpServer);
 
 var mysql = require("mysql");
 var connection = mysql.createConnection({
-    host: "localhost",
+    host: "opensw.iptime.org:3300",
     port: 3306,
     user: "root",
-    password: "chlqudwns3073!",
+    password: "qwe505",
     database: "exms"
 });
 

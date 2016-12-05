@@ -56,6 +56,7 @@ public class ListDataAdapter extends BaseAdapter {
         long nowTime = System.currentTimeMillis();
 
         boolean expCheck = false;  // 이부분 유통기한 비교값!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        int check_exp = 0;
         String[] str_date = data.exp.split("-");
         int exp_year = Integer.parseInt(str_date[0]);
         int exp_month = Integer.parseInt(str_date[1]);
@@ -68,20 +69,36 @@ public class ListDataAdapter extends BaseAdapter {
         // 2016.12.05 ....... 2016.12.06
         if(today_year >= exp_year){
             if(today_month >= exp_month){
+
                 if(today_day > exp_dayOfMonth){
                     expCheck = true;
+                    check_exp = 1;
                 } else{
                     expCheck = false;
+                    check_exp = 0;
                 }
+                if(0 <= exp_dayOfMonth - today_day && exp_dayOfMonth - today_day <= 3){
+                    check_exp = 2;}
             } else{
                 expCheck = false;
+                check_exp = 0;
             }
         } else{
             expCheck = false;
+            check_exp = 0;
         }
 
-        if(expCheck){
+        /*if(expCheck){
             txtExp.setTextColor(Color.RED);
+        }
+        else {
+            txtExp.setTextColor(Color.GREEN);
+        }*/
+        if(check_exp == 1){
+            txtExp.setTextColor(Color.RED);
+        }
+        else if(check_exp == 2){
+            txtExp.setTextColor(Color.BLUE);
         }
         else {
             txtExp.setTextColor(Color.GREEN);

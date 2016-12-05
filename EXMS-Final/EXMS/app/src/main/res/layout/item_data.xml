@@ -14,7 +14,8 @@
         android:layout_marginLeft="31dp"
         android:layout_marginStart="31dp"
         android:id="@+id/txt_code"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:textSize="25dp"/>
 
     <TextView
         android:text="TextView"
@@ -26,7 +27,8 @@
         android:layout_marginLeft="58dp"
         android:layout_marginStart="58dp"
         android:textColor="@android:color/black"
-        android:id="@+id/txt_name" />
+        android:id="@+id/txt_name"
+        android:textSize="25dp"/>
 
     <TextView
         android:text="TextView"
@@ -38,5 +40,6 @@
         android:layout_marginLeft="46dp"
         android:layout_marginStart="46dp"
         android:textColor="@android:color/black"
-        android:id="@+id/txt_exp" />
+        android:id="@+id/txt_exp"
+        android:textSize="25dp"/>
 </RelativeLayout>

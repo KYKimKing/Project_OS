@@ -15,7 +15,7 @@
         android:background="@color/colorPrimary"
         android:text="제품 등록"
         android:textColor="#FFFFFF"
-        android:textSize="100dp"/>
+        android:textSize="70sp"/>
     <Button
         android:id="@+id/btn_list"
         android:layout_width="match_parent"
@@ -24,5 +24,5 @@
         android:background="@color/colorPrimaryDark"
         android:text="제품 리스트"
         android:textColor="#FFFFFF"
-        android:textSize="100dp"/>
+        android:textSize="70sp"/>
 </LinearLayout>

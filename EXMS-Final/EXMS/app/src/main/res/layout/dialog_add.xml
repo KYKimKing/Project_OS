@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
             android:text="바코드"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:gravity="left"/>
         <EditText
             android:id="@+id/et_code"
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
             android:text="상품 명"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:gravity="left"/>
         <EditText
             android:id="@+id/et_name"
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
             android:text="유통기한"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:gravity="left"/>
         <!--<EditText
             android:id="@+id/et_exp"

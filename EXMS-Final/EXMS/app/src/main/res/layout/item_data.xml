@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:id="@+id/area_data">
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="31dp"
+        android:layout_marginStart="31dp"
+        android:id="@+id/txt_code"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txt_code"
+        android:layout_toRightOf="@+id/txt_code"
+        android:layout_toEndOf="@+id/txt_code"
+        android:layout_marginLeft="58dp"
+        android:layout_marginStart="58dp"
+        android:textColor="@android:color/black"
+        android:id="@+id/txt_name" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txt_name"
+        android:layout_toRightOf="@+id/txt_name"
+        android:layout_toEndOf="@+id/txt_name"
+        android:layout_marginLeft="46dp"
+        android:layout_marginStart="46dp"
+        android:textColor="@android:color/black"
+        android:id="@+id/txt_exp" />
+</RelativeLayout>

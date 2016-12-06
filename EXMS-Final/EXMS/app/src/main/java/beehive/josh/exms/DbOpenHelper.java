@@ -15,7 +15,7 @@ import io.socket.emitter.Emitter;
 
 public class DbOpenHelper {
 
-    private static final String SERVER_ADDRESS = "http://192.168.219.182:3000";
+    private static final String SERVER_ADDRESS = "http://opensw.iptime.org:3000";
     private Context context;
     private Socket socket;
     public ArrayList<Data> dataArrayList = new ArrayList<Data>();
